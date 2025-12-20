@@ -5,7 +5,7 @@ import aiosqlite
 # IMPORTANT : To record your chat history,
 # you need to create a file called example data.db (or whatever name you like) 
 
-from tokens import api_key, openai_api_key
+from tokens import api_key, open_key
 from openai import OpenAI
 from aiogram import Bot, Dispatcher, types
 from aiogram.filters import Command
@@ -19,7 +19,7 @@ log = logging.info
 dp = Dispatcher()
 bot = Bot(token=api_key)
 model = 'model' # here you can select any model llm
-client = OpenAI(api_key=openai_api_key)
+client = OpenAI(api_key=open_key)
 
 class setState(StatesGroup):
     image_handler = State()
