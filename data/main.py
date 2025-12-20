@@ -11,7 +11,7 @@ from aiogram import Bot, Dispatcher, types
 from aiogram.filters import Command
 from aiogram.types import Message
 from aiogram.fsm.state import State, StatesGroup
-from memory import database, create_table, require_message_data, save_message
+from memoru import database, create_table, require_message_data, save_message
 logging.basicConfig(level=logging.INFO, format="%(message)s")
 
 # register the important data
@@ -39,7 +39,7 @@ async def create_handler(message: types.Message):
     user_id = message.from_user.id
     
     try:
-        require = await require_message_data(user_id)
+        require = await require_message_data(connect, user_id)
         if require is None:
             await message.reply("Successfully chat created!")
             await save_message(connect, user_id, 'prompt', 'response')
