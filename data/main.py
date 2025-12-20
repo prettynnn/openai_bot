@@ -11,7 +11,7 @@ from aiogram import Bot, Dispatcher, types
 from aiogram.filters import Command
 from aiogram.types import Message
 from aiogram.fsm.state import State, StatesGroup
-from memoru import database, create_table, require_message_data, save_message
+from memory import database, create_table, require_message_data, save_message
 logging.basicConfig(level=logging.INFO, format="%(message)s")
 
 # register the important data
